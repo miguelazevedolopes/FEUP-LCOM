@@ -1,11 +1,38 @@
-int (timer_set_frequency)(uint8_t timer, uint32_t freq);
+#include <lcom/lcf.h>
+/** @defgroup timer timer.h
+ * @{
+ *
+ * This file contains the functions related to the timer functioning.
+ * 
+ */
 
+/**
+ * @brief Subscribes timer interrupts
+ * 
+ */
 int (timer_subscribe_int)(uint8_t *bit_no);
 
+/**
+ * @brief Unsubscribes timer interrupts
+ * 
+ */
 int (timer_unsubscribe_int)();
 
-void (timer_int_handler)();
+/**
+ * @brief Handles timer interrupts
+ * 
+ */
+void (timer_ih)();
 
-int (timer_get_conf)(uint8_t timer, uint8_t *st);
+/**
+ * @brief Uses timer interrupts to count the time
+ * 
+ */
+void update_game_elapsed_time();
 
-int (timer_display_conf)(uint8_t timer, uint8_t st,enum timer_status_field field);
+/**
+ * @brief Resets the timer count
+ * 
+ */
+void reset_game_elapsed_time();
+/**@}*/

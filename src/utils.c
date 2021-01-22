@@ -1,14 +1,19 @@
-#include <lcom/lcf.h>
 
 #include <stdint.h>
-
+/**
+ * @brief Gets the less significant byte
+ * 
+ */
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   *lsb=(val & 0x00FF);
 
 
   return 0;
 }
-
+/**
+ * @brief Gets the most significant byte
+ * 
+ */
 int(util_get_MSB)(uint16_t val, uint8_t *msb) {
   *msb=val >> 8;
   return 0;
